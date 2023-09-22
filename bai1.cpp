@@ -1,21 +1,8 @@
 #include<iostream>
 using namespace std;
 
-bool so_doi_xung(long long x) {
-    string s = to_string(x);
-    int left = 0;
-    int right = s.size() - 1;
-    while (left < right) {
-        if (s[left] != s[right]) {
-            return false;
-        }
-        left++;
-        right--;
-    }
-    return true;
-}
 
-bool tat_ca_chu_so_giong_nhau(long long x) {
+bool so_doi_xung(long long x) {
     string s = to_string(x);
     char first_digit = s[0];
     for (char c : s) {
@@ -37,7 +24,7 @@ int main() {
         } else {
             long long so_doi_xung_ = n + 1;
             while (true) {
-                if (tat_ca_chu_so_giong_nhau(so_doi_xung_)) {
+                if (so_doi_xung(so_doi_xung_)) {
                     m = so_doi_xung_ - n;
                     break;
                 }
